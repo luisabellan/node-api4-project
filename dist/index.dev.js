@@ -1,5 +1,7 @@
 "use strict";
 
+require('dotenv').config();
+
 var port = process.env.PORT;
 
 var express = require("express");
@@ -20,5 +22,5 @@ server.use(cors());
 server.use('/api/', welcomeRoute);
 server.use('/api/posts', postsRoutes);
 server.listen(port, function () {
-  return console.log("API running on port ${port}");
+  return console.log("API running on port ".concat(port));
 });
