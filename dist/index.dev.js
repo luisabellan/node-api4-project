@@ -1,5 +1,7 @@
 "use strict";
 
+var port = process.env.PORT;
+
 var express = require("express");
 
 var cors = require("cors");
@@ -17,6 +19,6 @@ server.use(express.json());
 server.use(cors());
 server.use('/api/', welcomeRoute);
 server.use('/api/posts', postsRoutes);
-server.listen(8000, function () {
-  return console.log("API running on port 8000");
+server.listen(port, function () {
+  return console.log("API running on port ${port}");
 });

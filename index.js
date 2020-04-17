@@ -1,3 +1,5 @@
+const port = process.env.PORT;
+
 const express = require("express");
 const cors = require("cors");
 
@@ -13,4 +15,4 @@ server.use(cors())
 server.use('/api/', welcomeRoute)
 server.use('/api/posts', postsRoutes)
 
-server.listen(8000, () => console.log("API running on port 8000"));
+server.listen(port, () => console.log("API running on port ${port}"));
